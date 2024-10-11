@@ -21,7 +21,7 @@ int mincoin(int arr[],int n,int am)
     return ans;
 }
 int main()
-{
+{k
     int arr[]={2,2,8};
     int n=sizeof(arr)/sizeof(arr[0]);
     int amount=8;
