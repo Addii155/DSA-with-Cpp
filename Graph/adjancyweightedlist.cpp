@@ -30,7 +30,7 @@ int main()
     cout<<"enter vertices-> ";
     cin>>v;
     graph.resize(v,list<pair<int,int>>());
-    cout<<"enter no of edge->";
+    cout<<"enter no of edge-> ";
     int e;
     cin>>e;
     while(e--)

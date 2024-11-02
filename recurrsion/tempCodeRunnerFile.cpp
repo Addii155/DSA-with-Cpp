@@ -1,1 +1,4 @@
- recr(3);
+  for(auto it:dp)
+    {
+        cout<<it<<" ";
+    }

@@ -55,7 +55,6 @@ void ispath(int src, int des, vector<int> &path, vector<vector<int>> &result)
             ispath(it, des, path, result);
         }
     }
-
     // Remove current node from the path and visited set before backtracking
     path.pop_back();
     visited.erase(src);
