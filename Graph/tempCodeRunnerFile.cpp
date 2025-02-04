@@ -7,7 +7,6 @@ vector<list<pair<int, int>>> graph;
 int v;
 
 void add_edge(int src, int des, int wt, bool bidir = true) {
-    cout << "Adding edge: " << src << " -> " << des << " (Weight: " << wt << ")\n";
     graph[src].push_back({des, wt});
     if (bidir) {
         graph[des].push_back({src, wt});
@@ -27,33 +26,16 @@ void print_graph() {
 int main() {
     cout << "Enter number of vertices: ";
     cin >> v;
-
-    if (cin.fail() || v <= 0) {
-        cout << "Invalid input for vertices!" << endl;
-        return 1;
-    }
-
-    graph.resize(v);
+    graph.resize(v);  // FIXED: No need to pass second parameter
 
     cout << "Enter number of edges: ";
     int e;
     cin >> e;
 
-    if (cin.fail() || e < 0) {
-        cout << "Invalid input for edges!" << endl;
-        return 1;
-    }
-
     cout << "Enter edges (source destination weight):\n";
     while (e--) {
         int s, d, wt;
         cin >> s >> d >> wt;
-
-        if (s < 0 || s >= v || d < 0 || d >= v || wt < 0) {
-            cout << "Invalid edge input! Skipping...\n";
-            continue;
-        }
-
         add_edge(s, d, wt);
     }
 

@@ -3,7 +3,6 @@
 #include <queue>
 using namespace std;
 
-// Structure for a binary tree node
 struct Node {
     int data;
     Node* left, *right;

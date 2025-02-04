@@ -37,9 +37,9 @@ class Minheap{
 
 int main(){
     Minheap m1;
+    m1.push(30);
     m1.push(10);
     m1.push(20);
-    m1.push(30);
     m1.push(3);
     m1.display();
     m1.push(50);

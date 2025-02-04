@@ -23,6 +23,7 @@ void bfTraverse(Node* root)
         cout<<temp->val<<" ";
         if(temp->left!=NULL) q.push(temp->left);
         if(temp->right!=NULL) q.push(temp->right);
+        
     }
 }
 int level(Node* root)
@@ -47,5 +48,6 @@ int main()
    c->left=f;
    c->right=g;
 //    bfTraverse(a);
-   cout<<level(a)<<endl;
+   bfTraverse(a);
+   cout<<endl;
 }

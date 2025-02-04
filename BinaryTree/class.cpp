@@ -43,7 +43,7 @@ public:
 };
 int main()
 {
-   Books m;
+   Books m;  // object 
     m.settname('a');
     m.setterprice(200);
     m.setterpage(500);

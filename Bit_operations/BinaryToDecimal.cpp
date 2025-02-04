@@ -9,6 +9,7 @@ int convert_BinarytoDecimal(string str)
     {
         char ch = str[i];
         int num = ch - '0';
+        cout<<num<<" ";
         result = result + num * (1 << (n - i - 1));
     }
     return result;
@@ -16,6 +17,6 @@ int convert_BinarytoDecimal(string str)
 int main()
 {
     string str = "1010";
-    cout << convert_BinarytoDecimal(str);
+    cout << convert_BinarytoDecimal(str)<<endl;
     return 0;
 }

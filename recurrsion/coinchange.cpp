@@ -23,6 +23,7 @@ int mincoin(int arr[],int n,int am ,vector<int>&dp)
     dp[am]=ans;
     return dp[am];
 }
+
 int main()
 {
     int arr[]={3,2,2};

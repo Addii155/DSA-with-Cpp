@@ -83,7 +83,7 @@ int main()
     int src, des;
     cout << "Enter source and destination: ";
     cin >> src >> des;
-
+    
     ispath(src, des, path, result);  // Find all paths from src to des
 
     // Output all found paths

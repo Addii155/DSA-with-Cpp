@@ -10,7 +10,7 @@ string Decimal_To_Binary(int n){
             s="0"+s;
         }
         else s="1"+s;
-        n=n>>1;
+        n=n>>1; 
     }
     return s;
 }
