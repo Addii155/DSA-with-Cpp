@@ -14,7 +14,7 @@ int maxsum(int arr[],int n,int i,int sum)
 }
 int main()
 {
-    int arr[]={1,2,3,9};
+    int arr[]={1,2,3,1};
     int n=sizeof(arr)/sizeof(arr[0]);
     cout<<maxsum(arr,n ,0 ,0);
 }
