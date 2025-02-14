@@ -29,30 +29,25 @@ int solveTopDown(int weight[], int value[], int amount, int n, vector<vector<int
 int solveBottomUP(int weight[], int value[], int amount, int n)
 {
     vector<vector<int>> dp(n + 1, vector<int>(amount + 1, 0));
-    for (int wt = 0; wt <= amount; wt++)
-    {
-        if (weight[0] <= wt)
-        {
-            dp[0][wt] = value[0];
-        }
-        else
-            dp[0][wt] = 0;
-    }
-    for (int i = 1; i < n; i++) // i represents the current item index
+    
+    for (int i = 0; i <= n; i++) // i represents item upto current index
     {
         for (int j = 0; j <= amount; j++) // j represents the current capacity
         {
-            int include = 0, exclude = 0;
-            if (weight[i] <= j)
+            if( i==0 || j==0)
             {
-                include = value[i] + dp[i][j - weight[i]]; // Include item i
+                dp[i][j]=0;
             }
-            exclude = dp[i][j];                   // Exclude item i
-            dp[i + 1][j] = max(include, exclude); // Store result in i+1 row
+            else{
+
+                if( weight[i-1] > j) dp[i][j]=dp[i-1][j];
+                else
+                dp[i][j]=max(dp[i-1][j], j-weight[i-1]>=0 ? dp[i-1][j-weight[i-1]]+value[i-1]:0);
+            }
         }
     }
 
-    return dp[n][amount]; // Answer is in dp[n][amount] (1-based indexing)
+    return dp[n][amount]; 
 }
 
 int main()
