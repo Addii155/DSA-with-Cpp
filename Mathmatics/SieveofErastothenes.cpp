@@ -9,7 +9,7 @@ int main()
     cin>>n;
     vector<bool>isPrime(n+1,true);
     isPrime[0]=isPrime[1]=false;
-    for(int i=0;i<n;i++)
+    for(int i=2;i<=n;i++)
     {
         if(isPrime[i])
         {
@@ -23,4 +23,7 @@ int main()
     {
         if(isPrime[i]) cout<<i<<" ";
     }
-}
+} 
+
+// Time Complexity: O(nlog(logn))
+// Space Complexity: O(n)
