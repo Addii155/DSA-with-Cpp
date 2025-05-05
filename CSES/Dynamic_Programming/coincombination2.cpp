@@ -21,16 +21,21 @@ ll solve(vector<ll>&arr,int idx,ll m ,ll& n ,vector<vector<ll>>& dp)
 ll solveTabulation(vector<ll>&arr,ll m,ll& n)
 {
     vector<vector<ll>>dp (n+1, vector<ll>(m+1,0));
-    for(int i=n-1;i>=0;i--)
+      
+    for (int i = 0; i <= n; i++) dp[i][0] = 1;
+
+    for (int i = n - 1; i >= 0; i--)
     {
-        for(int j=0;j<=m;j++)
+        for (int j = 0; j <= m; j++)
         {
-            if(j==0) dp[i][j]=1;
-            else if(j<arr[i]) dp[i][j]=dp[i+1][j];
-            else dp[i][j]=(dp[i+1][j] + dp[i][j-arr[i]])%MOD;
+            ll skip = dp[i + 1][j];
+            ll take = 0;
+            if (j - arr[i] >= 0) take = dp[i][j - arr[i]];
+            dp[i][j] = (skip + take) % MOD;
         }
     }
-    return dp[0][m]%MOD;
+
+    return dp[0][m];
 }
 int main()
 {
