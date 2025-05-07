@@ -10,7 +10,6 @@ int solve(vector<vector<int>>&grid,int i,int j)
     if(i<0) return INT_MAX; //if we go out of bound then return max value
     if(j<0) return INT_MAX; //if we go out of bound then return max value 
     return grid[i][j] + min(solve(grid,i-1,j) , solve(grid,i,j-1)); //recursive approach
-
 }
 int main()
 {
