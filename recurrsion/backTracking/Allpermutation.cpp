@@ -24,3 +24,6 @@ int main()
     string str="abc";
     findpermutation(str,0,0);
 }
+
+// IP-OP Method 
+// in this method given input string is converted into expected ouput
