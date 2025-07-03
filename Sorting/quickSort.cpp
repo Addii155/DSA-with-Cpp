@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -41,10 +40,7 @@ void quickSort(vector<int> &vec, int low, int high) {
 int main() {
     vector<int> vec = {10, 7, 8, 9, 1, 5};
     int n = vec.size();
-    
-     
     quickSort(vec, 0, n - 1);
-
     for (auto i : vec) {
         cout << i << " ";
     }

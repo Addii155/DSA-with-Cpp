@@ -14,7 +14,7 @@ void add_edge(int src, int des, int wt, bool bidir = true) {
     }
 }
 
-void print_graph() {
+void print_graph() {    
     for (int i = 0; i < graph.size(); i++) {
         cout << i << " -> ";
         for (auto it : graph[i]) {

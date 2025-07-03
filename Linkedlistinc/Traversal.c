@@ -13,7 +13,6 @@ void traverse(struct Node * a)
         printf("%d\t",temp->data);
         temp=temp->next;
     }
-    // printf("\n");
 }
 struct Node* addFront(struct Node * head,int data)
 {
