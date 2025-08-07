@@ -78,15 +78,33 @@ void printTree(int *st, int n) {
         cout << endl;
     }
 }
-
+int BuildMaxST(int arr[],int *st,int lo,int hi,int si)
+{
+    if(lo==hi)
+    {
+        st[si]=arr[lo];
+        return st[si];
+    }
+    int mid= lo + (hi-lo)/2;
+    int left=BuildMaxST(arr,st,lo,mid,2*si+1);
+    int right=BuildMaxST(arr,st,mid+1,hi,2*si+2);
+    return st[si] = max(left,right);
+}
 int main()
 {
     int arr[]={1,2,5,6,7,9};
     int n=sizeof(arr)/sizeof(arr[0]);
+    int height = (int)(ceil(log2(n)));
+    int max_element = 2*(int)pow(2,height)-1;
     int *segmentTree=construct_segment_tree(n,arr);
-    updateValue(segmentTree,arr,n,5,10);
+    // updateValue(segmentTree,arr,n,5,10);
     printTree(segmentTree,n);
-    cout<<"query Sum:-> "<< getSum(segmentTree,n,1,5)<<endl;
+    // cout<<"query Sum:-> "<< getSum(segmentTree,n,1,5)<<endl;
+
+    int *st_max = new int[max_element];
+    for(int i=0;i<max_element;i++) st_max[i]=0;
+    BuildMaxST(arr,st_max,0,n-1,0); 
+    printTree(st_max,n);
 
 }
 
