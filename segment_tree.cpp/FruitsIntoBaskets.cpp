@@ -35,6 +35,7 @@ int findLeftMost(int fruit,int *st,int lo,int hi,int i)
         st[i]=-1;
         return 1;
     }
+    
     int val;
     int mid=lo + (hi-lo)/2;
     if(st[i]>=fruit)
